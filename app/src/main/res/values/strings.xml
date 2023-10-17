@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">Test Uts Lagi</string>
+    <string name="mataKuliah1">Teori Bahasa dan Automata</string>
+    <string name="mataKuliah2">Pengantar Kecerdasan Buatan</string>
+    <string name="mataKuliah3">Mobile Computing</string>
+    <string name="mataKuliah4">Kewirausahaan</string>
+    <string name="mataKuliah5">Komputer dan Masyarakat</string>
+    <string name="mataKuliah6">Metode Penelitian</string>
+    <string name="mataKuliah7">Data Mining</string>
+    <string name="mataKuliah8">Animasi Komputer</string>
+    <string name="mataKuliah9">STEM</string>
+    <string name="mataKuliah10">Pengolahan Citra</string>
+    <string name="sks1">3</string>
+    <string name="sks2">3</string>
+    <string name="sks3">3</string>
+    <string name="sks4">2</string>
+    <string name="sks5">2</string>
+    <string name="sks6">2</string>
+    <string name="sks7">3</string>
+    <string name="sks8">3</string>
+    <string name="sks9">3</string>
+    <string name="sks10">3</string>
 </resources>

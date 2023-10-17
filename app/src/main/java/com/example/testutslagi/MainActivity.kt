@@ -1,26 +1,17 @@
 package com.example.testutslagi
 
-import android.graphics.Paint.Align
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.itemsIndexed
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -37,13 +28,18 @@ import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.layout
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.testutslagi.MataKuliahData.MataKuliah
 import com.example.testutslagi.ui.theme.TestUtsLagiTheme
+import javax.sql.DataSource
+
+
 
 
 class MainActivity : ComponentActivity() {
@@ -51,16 +47,17 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             TestUtsLagiTheme {
-                val mataKuliah = listOf("Teori Bahasa dan Automata",
-                    "Pengantar Kecerdasan Buatan",
-                    "Mobile Computing ",
-                    "Kewirausahaan",
-                    "Komputer dan Masyarakat",
-                    "Metode Penelitian",
-                    "Data Mining",
-                    "Animasi Komputer",
-                    "STEM",
-                    "Pengolahan Citra")
+
+                val mataKuliah = listOf(stringResource(id =R.string.mataKuliah1 ) ,
+                    stringResource(id =R.string.mataKuliah2 ) ,
+                    stringResource(id =R.string.mataKuliah3 ) ,
+                    stringResource(id =R.string.mataKuliah4 ) ,
+                    stringResource(id =R.string.mataKuliah5 ) ,
+                    stringResource(id =R.string.mataKuliah6 ) ,
+                    stringResource(id =R.string.mataKuliah7 ) ,
+                    stringResource(id =R.string.mataKuliah8 ) ,
+                    stringResource(id =R.string.mataKuliah9 ) ,
+                    stringResource(id =R.string.mataKuliah10 ) )
 
                 val imgKuliah = listOf(R.drawable.p1,
                     R.drawable.p2,
@@ -74,7 +71,18 @@ class MainActivity : ComponentActivity() {
                     R.drawable.p10
                 )
 
-                val sksKuliah = listOf("3", "3", "3", "2", "2", "2", "3", "3", "3", "3")
+                val sksKuliah = listOf(
+                    stringResource(id =R.string.sks1 ) ,
+                    stringResource(id =R.string.sks2  ) ,
+                    stringResource(id =R.string.sks3  ) ,
+                    stringResource(id =R.string.sks4 ) ,
+                    stringResource(id =R.string.sks5  ) ,
+                    stringResource(id =R.string.sks6  ) ,
+                    stringResource(id =R.string.sks7  ) ,
+                    stringResource(id =R.string.sks8  ) ,
+                    stringResource(id =R.string.sks9  ) ,
+                    stringResource(id =R.string.sks10 )
+                )
 
                 Text(text = "Mata Kuliah 119",
                     fontSize = 20.sp,
@@ -100,28 +108,28 @@ class MainActivity : ComponentActivity() {
 //                                contentAlignment = Alignment.Center
                             ) {
 
-                                    Column(
+                                Column(
 
-                                    ){
-                                        Image( painter = painterResource(imgKuliah[i]),
-                                            contentDescription = "gambar",
-                                            contentScale = ContentScale.Crop,
-                                            modifier = Modifier
-                                                .width(190.dp)
-                                                .height(110.dp)
-                                        )
-                                        Text(text = mataKuliah[i],
-                                            fontSize = 17.sp,
-                                            fontWeight = FontWeight.Bold,
-                                            lineHeight = 18.sp,
-                                            modifier = Modifier
-                                                .padding(bottom = 4.dp, top = 6.dp, start = 10.dp, end = 10.dp))
+                                ){
+                                    Image( painter = painterResource(imgKuliah[i]),
+                                        contentDescription = "gambar",
+                                        contentScale = ContentScale.Crop,
+                                        modifier = Modifier
+                                            .width(190.dp)
+                                            .height(110.dp)
+                                    )
+                                    Text(text = mataKuliah[i],
+                                        fontSize = 17.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        lineHeight = 18.sp,
+                                        modifier = Modifier
+                                            .padding(bottom = 4.dp, top = 6.dp, start = 10.dp, end = 10.dp))
 
-                                        Text(text = sksKuliah[i] + " SKS",
-                                            modifier = Modifier
-                                                .padding(start = 10.dp, end = 10.dp)
-                                            )
-                                    }
+                                    Text(text = sksKuliah[i] + " SKS",
+                                        modifier = Modifier
+                                            .padding(start = 10.dp, end = 10.dp)
+                                    )
+                                }
 
 
 
@@ -147,7 +155,6 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun GreetingPreview() {
         TestUtsLagiTheme {
-            Greeting("Android")
         }
     }
 }
